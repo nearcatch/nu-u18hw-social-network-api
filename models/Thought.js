@@ -1,33 +1,46 @@
-const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
+const { Schema, model } = require("mongoose");
+const reactionSchema = require("./Reaction");
 
 // Schema to create Thought model
 const thoughtSchema = new Schema(
   {
-    first: {
+    thoughtText: {
       type: String,
       required: true,
-      max_length: 50,
+      min_length: 1,
+      max_length: 280,
     },
-    last: {
-      type: String,
-      required: true,
-      max_length: 50,
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: (date) => {
+        return (
+          new Date(date).toLocaleDateString() +
+          " " +
+          new Date(date).toLocaleTimeString()
+        );
+      },
     },
-    github: {
+    username: {
       type: String,
       required: true,
-      max_length: 50,
     },
     reactions: [reactionSchema],
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true,
     },
   }
 );
 
-const Thought = model('thought', thoughtSchema);
+thoughtSchema
+  .virtual("reactionCount")
+  .get(function () {
+    return `${this.reactions.length}`;
+  });
+
+const Thought = model("thought", thoughtSchema);
 
 module.exports = Thought;
