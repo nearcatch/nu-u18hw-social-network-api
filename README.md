@@ -25,17 +25,17 @@
 
 <div align="center">
 
-<h3 align="center">E-Commerce Backend</h3>
+<h3 align="center">Social Network API</h3>
 
   <p align="center">
-    an e-commerce backend api
+    an social network api
     <br />
-    <a href="https://github.com/nearcatch/nu-u13h-ecommerce-backend"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nearcatch/nu-u18hw-social-network-api"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nearcatch/nu-u13h-ecommerce-backend/issues">Report Bug</a>
+    <a href="https://github.com/nearcatch/nu-u18hw-social-network-api/issues">Report Bug</a>
     ·
-    <a href="https://github.com/nearcatch/nu-u13h-ecommerce-backend/issues">Request Feature</a>
+    <a href="https://github.com/nearcatch/nu-u18hw-social-network-api/issues">Request Feature</a>
   </p>
 </div>
 
@@ -67,17 +67,15 @@
 
 ## About the Project
 
-This repository creates an API for accessing product info, categories, and tags via an Express.js server.
+This repository creates a social network API for users to post thoughts and reactions.
 
 ### Built With
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Node.js](https://nodejs.org/en/)
   * [Express.js](https://expressjs.com/)
-  * [dotenv](https://github.com/motdotla/dotenv#readme)
-  * [Sequelize](https://sequelize.org/)
-  * [Node MySQL 2](https://github.com/sidorares/node-mysql2#readme)
-* [MySQL](https://www.mysql.com/)
+  * [Mongoose](https://mongoosejs.com/)
+* [MongoDB](https://www.mongodb.com/)
 * [Insomnia](https://insomnia.rest/products/insomnia)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -88,14 +86,14 @@ This repository creates an API for accessing product info, categories, and tags 
 
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). (Only if cloning via command line.)
 2. Install [Node.js](https://nodejs.org/en/download/current/).
-2. Install [MySQL](https://dev.mysql.com/downloads/installer/). (Or use an alternate SQL server.)
+2. Install [MongoDB](https://www.mongodb.com/try/download/community).
 3. Install [Insomnia](https://insomnia.rest/download). (Or use an alternate API client.)
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nearcatch/nu-u13h-ecommerce-backend.git
+   git clone https://github.com/nearcatch/nu-u18hw-social-network-api.git
    ```
    Alternatively, download and open the ZIP archive directly from GitHub.
 
@@ -110,18 +108,13 @@ This repository creates an API for accessing product info, categories, and tags 
 
 ## Usage
 
-1. Rename the `.env.EXAMPLE` file to `.env` and add your sql server credentials.
-2. Run the commands in `schema.sql` using MySQL or a preferred alternative to create the ecommerce_db database.
-3. Run `npm run seed` from the root of the code repository to seed the ecommerce_db with test data.
-4. Run `npm run start` from the root of the code repository to start the API.
+1. Run `npm run start` from the root of the code repository to start the API.
 
-<video src="https://user-images.githubusercontent.com/692914/167065350-9dca4b8d-4582-4cad-86de-264374674da8.mp4" style="width:100%"></video>
+2. Use Insomnia or a preferred alternative to send requests to the API and interact with the database.
 
-5. Use Insomnia or a preferred alternative to send requests to the API and interact with the database.
+<video src="https://user-images.githubusercontent.com/692914/170383633-d5b9b38e-aafa-4606-b39d-c33d2bdcf755.mp4
+" style="width:100%"></video>
 
-<video src="https://user-images.githubusercontent.com/692914/167067954-0a8acdbc-40b4-42b3-95d0-b6953c94691c.mp4" style="width:100%"></video>
-
-6. Run `npm run seed` again to reseed the ecommerce_db with fresh test data if necessary.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -139,7 +132,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Jason Thekkekara - [LinkedIn][linkedin-url] - [Github](https://github.com/nearcatch)
 
-Project Link: [https://github.com/nearcatch/nu-u13h-ecommerce-backend](https://github.com/nearcatch/nu-u13h-ecommerce-backend)
+Project Link: [https://github.com/nearcatch/nu-u18hw-social-network-api](https://github.com/nearcatch/nu-u18hw-social-network-api)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -154,16 +147,16 @@ Project Link: [https://github.com/nearcatch/nu-u13h-ecommerce-backend](https://g
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/nearcatch/nu-u13h-ecommerce-backend.svg?style=for-the-badge
-[contributors-url]: https://github.com/nearcatch/nu-u13h-ecommerce-backend/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/nearcatch/nu-u13h-ecommerce-backend.svg?style=for-the-badge
-[forks-url]: https://github.com/nearcatch/nu-u13h-ecommerce-backend/network/members
-[stars-shield]: https://img.shields.io/github/stars/nearcatch/nu-u13h-ecommerce-backend.svg?style=for-the-badge
-[stars-url]: https://github.com/nearcatch/nu-u13h-ecommerce-backend/stargazers
-[issues-shield]: https://img.shields.io/github/issues/nearcatch/nu-u13h-ecommerce-backend.svg?style=for-the-badge
-[issues-url]: https://github.com/nearcatch/nu-u13h-ecommerce-backend/issues
-[license-shield]: https://img.shields.io/github/license/nearcatch/nu-u13h-ecommerce-backend.svg?style=for-the-badge
-[license-url]: https://github.com/nearcatch/nu-u13h-ecommerce-backend/blob/main/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/nearcatch/nu-u18hw-social-network-api.svg?style=for-the-badge
+[contributors-url]: https://github.com/nearcatch/nu-u18hw-social-network-api/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/nearcatch/nu-u18hw-social-network-api.svg?style=for-the-badge
+[forks-url]: https://github.com/nearcatch/nu-u18hw-social-network-api/network/members
+[stars-shield]: https://img.shields.io/github/stars/nearcatch/nu-u18hw-social-network-api.svg?style=for-the-badge
+[stars-url]: https://github.com/nearcatch/nu-u18hw-social-network-api/stargazers
+[issues-shield]: https://img.shields.io/github/issues/nearcatch/nu-u18hw-social-network-api.svg?style=for-the-badge
+[issues-url]: https://github.com/nearcatch/nu-u18hw-social-network-api/issues
+[license-shield]: https://img.shields.io/github/license/nearcatch/nu-u18hw-social-network-api.svg?style=for-the-badge
+[license-url]: https://github.com/nearcatch/nu-u18hw-social-network-api/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jason-thekkekara
-[product-screenshot]: https://raw.githubusercontent.com/nearcatch/nu-u13h-ecommerce-backend/main/assets/readme/full-page-screenshot.webp
+[product-screenshot]: https://raw.githubusercontent.com/nearcatch/nu-u18hw-social-network-api/main/assets/readme/full-page-screenshot.webp
