@@ -19,7 +19,7 @@ module.exports = {
       .populate({ path: "friends", select: "-__v" })
       .then((user) =>
         !user
-          ? res.status(404).json({ message: "No user with that ID" })
+          ? res.status(404).json({ message: "No user with that id!" })
           : res.json(user)
       )
       .catch((err) => {
@@ -45,7 +45,7 @@ module.exports = {
     )
       .then((user) =>
         !user
-          ? res.status(404).json({ message: "No user with this id!" })
+          ? res.status(404).json({ message: "No user with that id!" })
           : res.json(user)
       )
       .catch((err) => {
@@ -58,7 +58,7 @@ module.exports = {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
         !user
-          ? res.status(404).json({ message: "No user with that ID" })
+          ? res.status(404).json({ message: "No user with that id" })
           : Thought.deleteMany({ _id: { $in: user.thoughts } })
       )
       .then(() => res.json({ message: "User and thoughts deleted!" }))
@@ -78,11 +78,9 @@ module.exports = {
       .select("-__v")
       .populate({ path: "friends", select: "-__v" })
       .then((user) => {
-        if (!user) {
-          res.status(404).json({ message: "No user with that ID!" });
-          return;
-        }
-        res.json(user);
+        !user
+          ? res.status(404).json({ message: "No user with that id!" })
+          : res.json(user);
       })
       .catch((err) => {
         console.log(err);
@@ -99,11 +97,9 @@ module.exports = {
       .select("-__v")
       .populate({ path: "friends", select: "-__v" })
       .then((user) => {
-        if (!user) {
-          res.status(404).json({ message: "No user with that ID!" });
-          return;
-        }
-        res.json(user);
+        !user
+          ? res.status(404).json({ message: "No user with that id!" })
+          : res.json(user);
       })
       .catch((err) => {
         console.log(err);
