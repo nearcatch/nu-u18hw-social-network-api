@@ -1,29 +1,35 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 // Schema to create a user model
 const userSchema = new Schema(
   {
-    userName: {
+    username: {
       type: String,
+      unique: true,
       required: true,
+      trim: true,
     },
-    inPerson: {
-      type: Boolean,
-      default: true,
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      validate: {
+        validator: function (v) {
+          return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: "Please enter a valid email",
+      },
     },
-    startDate: {
-      type: Date,
-      default: Date.now(),
-    },
-    endDate: {
-      type: Date,
-      // Sets a default value of 12 weeks from now
-      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-    },
-    students: [
+    thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Student',
+        ref: "Thought",
+      },
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
       },
     ],
   },
@@ -35,6 +41,12 @@ const userSchema = new Schema(
   }
 );
 
-const User = model('user', userSchema);
+userSchema
+  .virtual("friendCount")
+  .get(function () {
+    return `${this.friends.length}`;
+  });
+
+const User = model("user", userSchema);
 
 module.exports = User;
